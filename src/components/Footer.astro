@@ -1,6 +1,7 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import Socials from "./Socials.astro";
+import IconRss from "@/assets/icons/IconRss.svg";
 import { useTranslations } from "@/i18n";
 
 type Props = {
@@ -20,7 +21,23 @@ const currentYear = new Date().getFullYear();
   <div
     class="border-border flex flex-col items-center justify-between border-t py-6 sm:flex-row-reverse sm:py-4"
   >
-    <Socials />
+    <div class="flex items-center gap-1">
+      <Socials />
+      <a
+        target="_blank"
+        href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}rss.xml`}
+        class="p-2 hover:rotate-6 sm:p-1"
+        aria-label="RSS Feed"
+        title="RSS Feed"
+      >
+        <IconRss
+          width={20}
+          height={20}
+          class="stroke-accent inline-block scale-125 stroke-3 rtl:-rotate-90"
+        />
+        <span class="sr-only">RSS Feed</span>
+      </a>
+    </div>
     <div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row">
       <span>{t.footer.copyright} &#169; {currentYear}</span>
       <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
