@@ -7,8 +7,9 @@ draft: false
 tags:
   - kubernetes
   - homelab-k3s
+description: The reasons why you should use Kubernetes in your home server
 ---
-Yes, you should use Kubernetes on your home server. No, it's not overengineering. This post (the first one I've ever published) will show you why. The next posts will show you how. 
+Yes, you should use Kubernetes in your home server. No, it's not overengineering. This post (the first one I've ever published) will show you why. The next posts will show you how. 
 
 A couple of months ago, I got a small form factor PC to use as home server. The purpose was to self-host the apps I need in my daily digital life. Instead of using SaaS solutions that either cost me money or keep my personal data (or both), I've embraced' the self-hosted way of life.
 
@@ -24,5 +25,6 @@ But enough of talking. As someone great used to say, "show me the code!". In fac
 
 Finally, I can also share my first public app. It's a simple SPA that shows the updated list of wildfires happening in Portugal. It may be of use for not so many people, but the only thing it needs to run (besides myself, on rare occasions) is some electricity. You can use it at [fogos.nuneslopes.org](https://fogos.nuneslopes.org) (FYI, "fogos" is the plural of "fogo", that means "fire"), and you can do whatever you want with it (including collaborate) from the GitHub public repository (link below).
 
-Home server repository: https://fogos.nuneslopes.org
-App for tracking wildfires (in Portugal): https://github.com/rodolfonuneslopes/fogos
+## Resources
+- Home server repository: https://fogos.nuneslopes.org
+- App for tracking wildfires (in Portugal): https://github.com/rodolfonuneslopes/fogos
