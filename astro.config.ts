@@ -7,6 +7,7 @@ import {
 import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
+import vercel from "@astrojs/vercel";
 import { unified } from "@astrojs/markdown-remark";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
@@ -21,6 +22,9 @@ import config from "./astro-paper.config";
 
 export default defineConfig({
   site: config.site.url,
+  adapter: vercel({
+    webAnalytics: { enabled: true },
+  }),
   integrations: [
     mdx(),
     sitemap({
