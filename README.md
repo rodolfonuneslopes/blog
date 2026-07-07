@@ -1,6 +1,6 @@
 # blog.nuneslopes
 
-Rodolfo Lopes' personal blog, built with [Astro](https://astro.build/) on the [AstroPaper](https://github.com/satnaing/astro-paper) theme.
+My personal blog, built with [Astro](https://astro.build/) on the [AstroPaper](https://github.com/satnaing/astro-paper) theme.
 
 ## Commands
 
