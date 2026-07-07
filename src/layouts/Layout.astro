@@ -5,6 +5,7 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 import { resolveDefaultOgImagePath } from "@/utils/resolveDefaultOgImagePath";
 import { getAssetPath } from "@/utils/withBase";
 import config from "@/config";
+import SpeedInsights from "@vercel/speed-insights/astro";
 import "@/styles/global.css";
 
 type Props = {
@@ -94,6 +95,9 @@ const rssHref = getRelativeLocaleUrl(
         />
       )
     }
+
+    <!-- Vercel Speed Insights -->
+    <SpeedInsights />
 
     <!--
       Inline FOUC-prevention script: sets data-theme on <html> before
