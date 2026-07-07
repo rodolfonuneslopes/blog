@@ -1,37 +1,23 @@
 ---
 title: "About"
-description: "A bit about me and this blog."
+description: "How this blog was implemented."
 ---
+## About the About
+This page details the technologies used to build and deploy this blog, as well as its main features. If you're interested in knowing more about its contents and philosophy, please check the [home page](https://blog.nuneslopes.org).  
+## Tech Stack
+This project was developed with [Astro](https://astro.build/), a JavaScript framework for building content-driven websites such as this blog. Alongside, I've used a couple of other accessory technologies:
+- [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss) 
+- [Pagefind](https://github.com/Pagefind/pagefind) 
+- [Satori](https://github.com/vercel/satori) +[Sharp](https://github.com/lovell/sharp)
+- Official Astro integrations:[@astrojs/mdx](https://docs.astro.build/en/guides/integrations-guide/mdx/) and [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
-
-![Astro Paper](@/assets/images/astropaper-og.jpg)
-
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
-
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
-
-## Features
-
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
-
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
-
-and so much more.
-
-## Show your support
-
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
-
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
-
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
-
-Kyay zuu! 🙏🏼
+I've deployed it on [Vercel](https://vercel.com/), instead of self-hosting it, because I wanted to assure a theoretical 100% uptime.
+## Appearence
+I used the theme [AstroPaper](https://github.com/satnaing/astro-paper) by [Sat Naing](https://github.com/satnaing), which I then rebranded to my own taste and needs. 
+## Main features
+- Full-text search
+- RSS feed and sitemap
+- Light and dark mode
+- MDX support for posts with embedded components
+## Resources
+- [GitHub repository with all the blog code and posts](https://github.com/rodolfonuneslopes/blog)

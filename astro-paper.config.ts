@@ -2,14 +2,14 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://astro-paper.pages.dev/",
-    title: "AstroPaper",
-    description: "A minimal, responsive and SEO-friendly Astro blog theme.",
-    author: "Sat Naing",
-    profile: "https://satna.ing",
+    url: "https://blog.nuneslopes.org/",
+    title: "blog.nuneslopes",
+    description: "Rodolfo Lopes' personal blog.",
+    author: "rodolfonuneslopes",
+    profile: "https://github.com/rodolfonuneslopes",
     ogImage: "default-og.jpg",
     lang: "en",
-    timezone: "Asia/Bangkok",
+    timezone: "Europe/Lisbon",
     dir: "ltr",
   },
   posts: {
@@ -23,16 +23,14 @@ export default defineAstroPaperConfig({
     showArchives: true,
     showBackButton: true,
     editPost: {
-      enabled: true,
-      url: "https://github.com/satnaing/astro-paper/edit/main/",
+      enabled: false,
     },
     search: "pagefind",
   },
   socials: [
-    { name: "github",   url: "https://github.com/satnaing/astro-paper" },
-    { name: "x",        url: "https://x.com/username" },
-    { name: "linkedin", url: "https://www.linkedin.com/in/username/" },
-    { name: "mail",     url: "mailto:yourmail@gmail.com" },
+    { name: "github",   url: "https://github.com/rodolfonuneslopes" },
+    { name: "linkedin", url: "https://www.linkedin.com/in/rodolfo-nunes-lopes/" },
+    { name: "mail",     url: "mailto:blog@nuneslopes.org" },
   ],
   shareLinks: [
     { name: "whatsapp", url: "https://wa.me/?text=" },
