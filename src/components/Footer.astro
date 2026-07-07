@@ -1,17 +1,14 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import Socials from "./Socials.astro";
+import LinkButton from "./LinkButton.astro";
 import IconRss from "@/assets/icons/IconRss.svg";
-import { useTranslations } from "@/i18n";
 
 type Props = {
   noMarginTop?: boolean;
 } & HTMLAttributes<"footer">;
 
 const { noMarginTop = false, class: className, ...attrs } = Astro.props;
-
-const t = useTranslations(Astro.currentLocale);
-const currentYear = new Date().getFullYear();
 ---
 
 <footer
@@ -39,9 +36,22 @@ const currentYear = new Date().getFullYear();
       </a>
     </div>
     <div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row">
-      <span>{t.footer.copyright} &#169; {currentYear}</span>
-      <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
-      <span>{t.footer.allRightsReserved}</span>
+      <span>
+        Built with
+        <LinkButton
+          href="https://github.com/satnaing/astro-paper"
+          class="underline decoration-dashed underline-offset-4"
+        >
+          AstroPaper
+        </LinkButton>
+        by
+        <LinkButton
+          href="https://github.com/satnaing"
+          class="underline decoration-dashed underline-offset-4"
+        >
+          Sat Naing
+        </LinkButton>
+      </span>
     </div>
   </div>
 </footer>

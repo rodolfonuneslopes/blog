@@ -30,6 +30,7 @@ export default defineAstroPaperConfig({
   socials: [
     { name: "github",   url: "https://github.com/rodolfonuneslopes" },
     { name: "linkedin", url: "https://www.linkedin.com/in/rodolfo-nunes-lopes/" },
+    { name: "mail",     url: "mailto:blog@nuneslopes.org" },
   ],
   shareLinks: [
     { name: "whatsapp", url: "https://wa.me/?text=" },
