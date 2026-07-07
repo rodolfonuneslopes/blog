@@ -23,7 +23,8 @@ export default defineAstroPaperConfig({
     showArchives: true,
     showBackButton: true,
     editPost: {
-      enabled: false,
+      enabled: true,
+      url: "https://github.com/rodolfonuneslopes/blog/edit/main/",
     },
     search: "pagefind",
   },
