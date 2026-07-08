@@ -1,5 +1,5 @@
 ---
-title: Kubernetes in a home server? YES! 
+title: Kubernetes in a home server? YES!
 author: rodolfonuneslopes
 pubDatetime: 2026-07-07T05:17:19Z
 featured: true
