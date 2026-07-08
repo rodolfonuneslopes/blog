@@ -104,24 +104,6 @@
     @apply bg-(--shiki-dark-bg) text-(--shiki-dark) [&_span]:text-(--shiki-dark);
   }
 
-  /* ===== Mermaid Diagrams (rendered to inline SVG at build time) ===== */
-  svg[id^="mermaid-"] {
-    @apply mx-auto my-6 block h-auto max-w-full;
-
-    /* Flowchart labels are HTML (<foreignObject>) containing <p> elements,
-       which .app-prose paints with the page text color; restore Mermaid's
-       own color so labels stay legible on the light panel in dark mode. */
-    p {
-      @apply my-0 text-inherit;
-    }
-  }
-
-  /* Diagrams are rendered once with Mermaid's light theme; a light panel
-     keeps them readable when the site theme is dark. */
-  html[data-theme="dark"] svg[id^="mermaid-"] {
-    @apply rounded-lg bg-white p-4 text-gray-900;
-  }
-
   /* Styles for Shiki transformers */
   /* https://shiki.style/packages/transformers */
   .astro-code {
