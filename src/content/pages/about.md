@@ -21,4 +21,4 @@ I've deployed it on [Vercel](https://vercel.com/), instead of self-hosting it, b
 ## Writing and publishing
 I've set up a pipeline that allows me to simply write (or edit) notes in Obsidian that are automatically published in the blog, when I set `draft: false` in the Markdown file's frontmatter. If I want to unpublish a post, I only need to set `draft: true`. Everything happens inside Obsidian.
 
-If you're curious about the pipeline, check out this [post](https://blog.nuneslopes/posts/productivity/from-obsidian-to-blog/), where I explain everything in detail. 
+If you're curious about the pipeline, check out this [post](https://blog.nuneslopes.org/posts/productivity/from-obsidian-to-blog/), where I explain everything in detail. 
