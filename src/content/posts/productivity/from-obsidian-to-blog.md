@@ -10,7 +10,7 @@ description: A pipeline to create notes in Obsidian and automatically publish th
 ---
 When I created this blog, I really had no idea how was I going to feed it with posts; since it has no WYSIWYG interface or anything like that. In fact, I already knew that uploading Markdown files to `src/content/posts` was a good approach, but it would be insane to perform a whole git flow each time I wanted to post something.
 
-Since necessity tends to sharpen imagination, I came up with the laziest solution possible: I write a post in Obsidian, press a button (still in Obsidian), and the post is published in the blog. Simple as that. This post explains how to implement this pipeline, step by step.
+Since necessity is the mother of invention, I came up with the laziest solution possible: I write a post in Obsidian, press a button (still in Obsidian), and the post is published in the blog. Simple as that. This post explains how to implement this pipeline, step by step.
 ## 1 Requirements
 - Obsidian vault with the [GitHub Sync plugin](https://community.obsidian.md/plugins/github-sync)
 	- Actually, this works with any Markdown editor, as long as you drive git separately
