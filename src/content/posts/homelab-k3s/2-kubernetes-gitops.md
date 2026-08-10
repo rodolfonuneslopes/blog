@@ -53,4 +53,4 @@ The main difference is that, when we edit the files, the changes are not directl
 - **Recovering** from a full cluster failure means pointing a fresh install at the same repo
 - If the infrastructure is distributed across **multiple clusters and/or environments**, you just need to follow the right convention to organize the repository (we'll get to this later).
 ## Implementing GitOps
-But, like I've said earlier, GitOps is not a binary that we can install in our operating system. It is a methodology, a framework in the broadest possible sense, that needs to be implemented. That's the subject of the [next post](/posts/homelab-k3s/2.1-kubernetes-gitops-flux).
+But, like I've said earlier, GitOps is not a binary that we can install in our operating system. It is a methodology, a framework in the broadest possible sense, that needs to be implemented. That is the subject of the [next post](/posts/homelab-k3s/2-1-kubernetes-gitops-flux).
