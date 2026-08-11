@@ -1,7 +1,7 @@
 ---
 title: "Homelab S01E01 - From commit to prodution: a homelab pipeline with full control"
 author: rodolfonuneslopes
-pubDatetime: 2026-07-17T05:13:19Z
+pubDatetime: 2026-07-18T05:13:19Z
 featured: true
 draft: false
 tags:

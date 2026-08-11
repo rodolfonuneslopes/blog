@@ -1,7 +1,7 @@
 ---
 title: Homelab S01E00 - Kubernetes in a home server?
 author: rodolfonuneslopes
-pubDatetime: 2026-07-10T05:17:19Z
+pubDatetime: 2026-07-11T05:17:19Z
 featured: false
 draft: false
 tags:
@@ -9,7 +9,7 @@ tags:
   - homelab
 description: The reasons why you should use Kubernetes in your home server
 ---
-Yes, you should use Kubernetes in your home server. No, it's not overengineering. This post will show you why. The next posts will show you how. 
+Yes, you should use Kubernetes in your home server. No, it's not overengineering. This post will show you why. The [next posts](/tags/homelab/) will show you how. 
 
 A couple of months ago, I got a small form factor PC to use as home server. The purpose was to self-host the apps I need in my daily digital life. Instead of using SaaS solutions that either cost me money or keep my personal data (or both), I've embraced' the self-hosted way of life.
 

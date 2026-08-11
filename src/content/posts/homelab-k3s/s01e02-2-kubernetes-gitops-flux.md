@@ -1,7 +1,7 @@
 ---
 title: Homelab S01E02 (pt.2) - When the repo is the cluster #2 (GitOps with Flux)
 author: rodolfonuneslopes
-pubDatetime: 2026-08-09T05:13:19Z
+pubDatetime: 2026-08-11T05:13:19Z
 featured: true
 draft: false
 tags:

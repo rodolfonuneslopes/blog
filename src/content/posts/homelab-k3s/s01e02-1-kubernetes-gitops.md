@@ -1,7 +1,7 @@
 ---
 title: "Homelab S01E02 (pt.1) - When the repo is the cluster #1 (GitOps)"
 author: rodolfonuneslopes
-pubDatetime: 2026-07-24T05:13:19Z
+pubDatetime: 2026-07-25T05:13:19Z
 featured: true
 draft: false
 tags:
