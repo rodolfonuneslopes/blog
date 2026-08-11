@@ -67,8 +67,7 @@ export default {
     title: "404 Not Found",
     message: "Page Not Found",
     goHome: "Go back home",
-    explanation:
-      "This page was moved, renamed, or never existed at all. Let's find what you came for.",
+    explanation: "This page was moved, renamed, or never existed at all.",
     pathLabel: "Requested path",
     searchCta: "Search this blog",
     orSeparator: "or",

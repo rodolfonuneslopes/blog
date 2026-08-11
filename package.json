@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build && pagefind --site dist && rm -rf public/pagefind && cp -r dist/pagefind public/",
+    "build": "astro check && astro build && pagefind --site .vercel/output/static && rm -rf public/pagefind dist/pagefind && cp -r .vercel/output/static/pagefind public/ && cp -r .vercel/output/static/pagefind dist/",
     "preview": "astro preview",
     "sync": "astro sync",
     "astro": "astro",
