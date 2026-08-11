@@ -8,7 +8,7 @@ tags:
   - homelab
   - kubernetes
   - pipelines
-description: An example of a pipeline with full control, since it includes the development phase of the service
+description: An example of a pipeline with full control
 ---
 In the [first post about my homelab](/posts/homelab-k3s/s01e00-why-kubernetes), I've put forth the reasons to use Kubernetes (with k3s) to manage self-hosted apps. One of them was the possibility to expose my own apps to the internet, according to the best practices; not only to assure the availability of the services, but also (and mainly) to keep my home network protected against all kinds of threat actors.
 
