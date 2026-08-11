@@ -1,12 +1,12 @@
 ---
-title: Kubernetes in a home server? YES!
+title: Homelab S01E00 - Kubernetes in a home server?
 author: rodolfonuneslopes
-pubDatetime: 2026-07-07T05:17:19Z
+pubDatetime: 2026-07-10T05:17:19Z
 featured: false
 draft: false
 tags:
   - kubernetes
-  - homelab-k3s
+  - homelab
 description: The reasons why you should use Kubernetes in your home server
 ---
 Yes, you should use Kubernetes in your home server. No, it's not overengineering. This post will show you why. The next posts will show you how. 
@@ -23,6 +23,6 @@ If Kubernetes in a home server is overengineering, what about a Linux distro in 
 
 But enough of talking. As someone great once said, "show me the code!". In fact, I can show you all the necessary code to run my Kubernetes cluster. Well, not all: I wont show you my private key, and there are some configs that need manual implementation. But, for the most part, if I want to migrate everything to a different machine, I just have to clone a repository. 
 
-And this repository is public (link below)! It seems crazy to share the details of your personal infrastructure, but that's one of the most beautiful things in Kubernetes, when configured in a certain way. It's Open-Source and Open-Security all over. If I may leave a teaser for the next post, check out [FluxCD](https://fluxcd.io/).
+And this repository is public (link below)! It seems crazy to share the details of your personal infrastructure, but that's one of the most beautiful things in Kubernetes, when configured in a certain way. It's Open-Source and Open-Security all over. 
 
 Well, here's the [link for the public repo with all my homelab code](https://github.com/rodolfonuneslopes/homelab-k3s). Your feedback would be very much appreciated.

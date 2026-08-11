@@ -1,12 +1,14 @@
 ---
-title: "When the repo is the cluster #1 (GitOps)"
+title: Homelab S01E02 (pt.1) - When the repo is the cluster #1 (GitOps)
 author: rodolfonuneslopes
-pubDatetime: 2026-08-01T05:13:19Z
+pubDatetime: 2026-07-24T05:13:19Z
 featured: true
 draft: false
 tags:
-  - homelab-k3s
-description: How to manage a Kubernetes (k3s) cluster with GitOps
+  - homelab
+  - kubernetes
+  - gitops
+description: How to manage a Kubernetes cluster with GitOps
 ---
 Every information system is made of files. From the Inquisition archives in the 1500s to modern data centers, "everything is a file". Just like the Trial of Joan d'Arc was made up of files, the processes of a modern Operating System are represented as files. Literally: a Linux-based system will have all running processes represented as files inside the directory `/proc/`. We can read these files in the same way we can read every type of file.
 
@@ -53,4 +55,4 @@ The main difference is that, when we edit the files, the changes are not directl
 - **Recovering** from a full cluster failure means pointing a fresh install at the same repo
 - If the infrastructure is distributed across **multiple clusters and/or environments**, you just need to follow the right convention to organize the repository (we'll get to this later).
 ## Implementing GitOps
-But, like I've said earlier, GitOps is not a binary that we can install in our operating system. It is a methodology, a framework in the broadest possible sense, that needs to be implemented. That is the subject of the [next post](/posts/homelab-k3s/2-1-kubernetes-gitops-flux).
+But, like I've said earlier, GitOps is not a binary that we can install in our operating system. It is a methodology, a framework in the broadest possible sense, that needs to be implemented. That is the subject of the [next post](/posts/homelab-k3s/s01e02-2-kubernetes-gitops-flux).

@@ -1,14 +1,16 @@
 ---
-title: "From commit to prodution: a homelab pipeline with full control"
+title: Homelab S01E01 - From commit to prodution: a homelab pipeline with full control
 author: rodolfonuneslopes
-pubDatetime: 2026-07-20T05:13:19Z
+pubDatetime: 2026-07-17T05:13:19Z
 featured: true
 draft: false
 tags:
-  - homelab-k3s
+  - homelab
+  - kubernetes
+  - pipelines
 description: An example of a pipeline with full control, since it includes the development phase of the service
 ---
-In the [first post about my homelab](/posts/homelab-k3s/0-why-k3s/), I've put forth the reasons to use Kubernetes (with k3s) to manage self-hosted apps. One of them was the possibility to expose my own apps to the internet, according to the best practices; not only to assure the availability of the services, but also (and mainly) to keep my home network protected against all kinds of threat actors.
+In the [first post about my homelab](/posts/homelab-k3s/s01e00-why-kubernetes), I've put forth the reasons to use Kubernetes (with k3s) to manage self-hosted apps. One of them was the possibility to expose my own apps to the internet, according to the best practices; not only to assure the availability of the services, but also (and mainly) to keep my home network protected against all kinds of threat actors.
 
 But, before explaining my decisions and strategy to build the homelab (which I'll be doing in the next posts), I'll give an example of a home made web app where I have full control: "from commit to production". Actually, it's an example of a whole system: I push a commit and, in a few minutes, the new version of the app is running in my k3s cluster. Later, in a series of articles, I will explain in detail my decisions to implement each step of the system. For now, let's see how it works from a high level perspective, using an example.
 ## The app [fogos](https://github.com/rodolfonuneslopes/fogos)

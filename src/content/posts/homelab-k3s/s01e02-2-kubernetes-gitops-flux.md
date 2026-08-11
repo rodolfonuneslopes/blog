@@ -1,14 +1,16 @@
 ---
-title: "When the repo is the cluster #2 (GitOps with Flux)"
+title: Homelab S01E02 (pt.2) - When the repo is the cluster #2 (GitOps with Flux)
 author: rodolfonuneslopes
-pubDatetime: 2026-08-02T05:13:19Z
+pubDatetime: 2026-08-09T05:13:19Z
 featured: true
 draft: false
 tags:
-  - homelab-k3s
-description: How to implement GitOps with Flux
+  - homelab
+  - kubernetes
+  - gitops
+description: How to implement GitOps with Flux in a Kubernetes cluster
 ---
-This article is the second part of the topic "When the repo is the cluster". The [first part](/posts/homelab-k3s/2-kubernetes-gitops) was about GitOps from an agnostic point of view. This second part is dedicated to the implementation of GitOps. It goes without saying that the first part should be read first. 
+This article is the second part of the topic "When the repo is the cluster". The [first part](/posts/homelab-k3s/s01e02-1-kubernetes-gitops) was about GitOps from an agnostic point of view. This second part is dedicated to the implementation of GitOps. It goes without saying that the first part should be read first. 
 ## Implementing GitOps with Flux
 Since GitOps is a methodology, we need tools to implement it (besides Git). The first one is a service to host the repository. For this purpose, GitHub is by far the best option for all possible reasons. But we also need a controller to reconcile the state of the cluster with its desired state (declared in the repo). The main feature will be running an infinite loop with these steps:
 - Check the state of the repo
