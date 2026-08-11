@@ -69,7 +69,7 @@ export default {
     goHome: "Go back home",
     explanation: "This page was moved, renamed, or never existed at all.",
     pathLabel: "Requested path",
-    searchCta: "Search this blog",
+    searchCta: "Search for it",
     orSeparator: "or",
     reportCta: "Tell me it's broken",
     mailSubject: "Broken link: {{path}}",
