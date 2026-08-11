@@ -1,5 +1,5 @@
 ---
-title: Homelab S01E02 (pt.1) - When the repo is the cluster #1 (GitOps)
+title: "Homelab S01E02 (pt.1) - When the repo is the cluster #1 (GitOps)"
 author: rodolfonuneslopes
 pubDatetime: 2026-07-24T05:13:19Z
 featured: true
