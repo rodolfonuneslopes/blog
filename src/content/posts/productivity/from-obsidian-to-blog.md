@@ -2,7 +2,7 @@
 title: Write in Obsidian, publish anywhere (automatically)
 author: rodolfonuneslopes
 pubDatetime: 2026-07-10T05:13:19Z
-featured: true
+featured: false
 draft: false
 tags:
   - productivity
