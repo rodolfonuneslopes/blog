@@ -2,13 +2,38 @@
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import LinkButton from "@/components/LinkButton.astro";
+import IconSearch from "@/assets/icons/IconSearch.svg";
+import IconMail from "@/assets/icons/socials/mail.svg";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { useTranslations } from "@/i18n";
 import config from "@/config";
 
 const locale = Astro.currentLocale ?? config.site.lang;
 const t = useTranslations(locale);
+
+const { features, socials } = config;
+
+// Both actions are progressively enhanced by the script below: without JS the
+// search link still opens the search page, and the report link still opens a
+// blank email to the same address.
+const searchUrl = getRelativeLocaleUrl(locale, "search");
+const mailAddress = socials
+  .find(({ name, url }) => name === "mail" || url.startsWith("mailto:"))
+  ?.url.replace(/^mailto:/, "");
+
+const showSearch = features.search !== false;
+const showReport = Boolean(mailAddress);
+
+const actionClass = [
+  "group border-border hover:border-accent hover:text-accent",
+  "flex items-center justify-center gap-2 rounded-md",
+  "border border-dashed px-4 py-3 transition-colors",
+].join(" ");
+
+const ruleClass = [
+  "border-border w-10 border-t border-dashed",
+  "sm:w-0 sm:flex-1 sm:border-t-0 sm:border-s",
+].join(" ");
 ---
 
 <Layout title={`${t.notFound.title} | ${config.site.title}`}>
@@ -18,18 +43,140 @@ const t = useTranslations(locale);
     id="main-content"
     class="app-layout flex flex-1 items-center justify-center"
   >
-    <div class="mb-14 flex flex-col items-center justify-center">
-      <h1 class="text-accent text-9xl font-bold">404</h1>
-      <span aria-hidden="true"> ¯\_(ツ)_/¯ </span>
-      <p class="mt-4 text-2xl sm:text-3xl">{t.notFound.message}</p>
-      <LinkButton
-        href={getRelativeLocaleUrl(locale, "")}
-        class="my-6 text-lg underline decoration-dashed underline-offset-8"
+    <div
+      id="not-found"
+      class="mb-14 flex w-full max-w-lg flex-col items-center text-center"
+    >
+      <h1 class="text-accent text-4xl font-bold text-nowrap sm:text-5xl">
+        {t.notFound.title}
+      </h1>
+
+      <p
+        id="requested-path"
+        hidden
+        class="border-border text-muted-foreground mt-4 max-w-full rounded border border-dashed px-3 py-1 font-mono text-sm"
       >
-        {t.notFound.goHome}
-      </LinkButton>
+        <span class="sr-only">{t.notFound.pathLabel}: </span>
+        <span id="requested-path-value" class="block truncate"></span>
+      </p>
+
+      <p class="mt-6">{t.notFound.explanation}</p>
+
+      <div
+        class:list={[
+          "mt-8 grid w-full gap-4",
+          showSearch && showReport && "sm:grid-cols-[1fr_auto_1fr] sm:gap-5",
+        ]}
+      >
+        {
+          showSearch && (
+            <a id="search-link" href={searchUrl} class={actionClass}>
+              <IconSearch class="size-5 flex-none" />
+              <span>{t.notFound.searchCta}</span>
+            </a>
+          )
+        }
+
+        {
+          showSearch && showReport && (
+            <div class="text-muted-foreground flex items-center justify-center gap-3 sm:flex-col sm:gap-2">
+              <span aria-hidden="true" class={ruleClass} />
+              <span class="text-xs tracking-widest uppercase">
+                {t.notFound.orSeparator}
+              </span>
+              <span aria-hidden="true" class={ruleClass} />
+            </div>
+          )
+        }
+
+        {
+          showReport && (
+            <a
+              id="report-link"
+              href={`mailto:${mailAddress}`}
+              data-mail-address={mailAddress}
+              data-mail-subject={t.notFound.mailSubject}
+              data-mail-body={t.notFound.mailBody}
+              data-mail-no-referrer={t.notFound.mailNoReferrer}
+              class={actionClass}
+            >
+              <IconMail class="size-5 flex-none" />
+              <span>{t.notFound.reportCta}</span>
+            </a>
+          )
+        }
+      </div>
     </div>
   </main>
 
   <Footer />
 </Layout>
+
+<script>
+  import { track } from "@vercel/analytics";
+  import { tplStr } from "@/i18n/format";
+
+  /**
+   * Derives search terms from a failed URL, e.g.
+   * `/posts/homelab-k3s/s01e00-why-kubernetes/` → `why kubernetes`.
+   *
+   * Episode markers and bare numbers are dropped: they carry no meaning for
+   * Pagefind and only dilute the results.
+   */
+  function toSearchQuery(pathname: string): string {
+    const slug = pathname.replace(/\/+$/, "").split("/").pop() ?? "";
+    return decodeURIComponent(slug)
+      .replace(/\.\w+$/, "")
+      .split(/[-_]/)
+      .filter(
+        word =>
+          word.length > 1 && !/^\d+$/.test(word) && !/^s\d+e\d+/i.test(word)
+      )
+      .join(" ");
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    // Page scripts stay loaded across client-side navigations, so make sure the
+    // 404 page is the one currently rendered.
+    const root = document.querySelector("#not-found");
+    if (!root) return;
+
+    const path = decodeURIComponent(window.location.pathname);
+    const referrer = document.referrer;
+
+    const pathBox = root.querySelector<HTMLElement>("#requested-path");
+    const pathValue = root.querySelector("#requested-path-value");
+    if (pathBox && pathValue) {
+      pathValue.textContent = path;
+      pathBox.hidden = false;
+    }
+
+    const searchLink = root.querySelector<HTMLAnchorElement>("#search-link");
+    const query = toSearchQuery(window.location.pathname);
+    if (searchLink && query) {
+      searchLink.href = `${searchLink.pathname}?q=${encodeURIComponent(query)}`;
+    }
+
+    const reportLink = root.querySelector<HTMLAnchorElement>("#report-link");
+    if (reportLink) {
+      const {
+        mailAddress = "",
+        mailSubject = "",
+        mailBody = "",
+        mailNoReferrer = "",
+      } = reportLink.dataset;
+      const subject = tplStr(mailSubject, { path });
+      const body = tplStr(mailBody, {
+        url: window.location.href,
+        referrer: referrer || mailNoReferrer,
+      });
+      reportLink.href = `mailto:${mailAddress}?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+    }
+
+    // Broken links are reported by a small minority of visitors; this shows the
+    // rest of them in the Vercel Analytics dashboard.
+    track("404", { path, referrer: referrer || "direct" });
+  });
+</script>

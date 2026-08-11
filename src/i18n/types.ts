@@ -65,5 +65,15 @@ export interface UIStrings {
     title: string;
     message: string;
     goHome: string;
+    explanation: string;
+    pathLabel: string;
+    searchCta: string;
+    orSeparator: string;
+    reportCta: string;
+    /** Supports `{{path}}`. */
+    mailSubject: string;
+    /** Supports `{{url}}` and `{{referrer}}`. */
+    mailBody: string;
+    mailNoReferrer: string;
   };
 }

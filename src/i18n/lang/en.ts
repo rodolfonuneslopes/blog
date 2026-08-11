@@ -67,5 +67,15 @@ export default {
     title: "404 Not Found",
     message: "Page Not Found",
     goHome: "Go back home",
+    explanation:
+      "This page was moved, renamed, or never existed at all. Let's find what you came for.",
+    pathLabel: "Requested path",
+    searchCta: "Search this blog",
+    orSeparator: "or",
+    reportCta: "Tell me it's broken",
+    mailSubject: "Broken link: {{path}}",
+    mailBody:
+      "Hi Rodolfo,\n\nI hit a 404 on your blog.\n\nPage: {{url}}\nCame from: {{referrer}}\n\n",
+    mailNoReferrer: "(opened directly)",
   },
 } satisfies UIStrings;
